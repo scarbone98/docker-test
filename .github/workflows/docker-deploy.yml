@@ -1,6 +1,7 @@
 name: Docker Build and Push
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
 
@@ -28,7 +29,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.DROPLET_IP }}
-        username: your-username
+        username: root
         key: ${{ secrets.DROPLET_SSH_KEY }}
         script: |
           docker pull scarbone1998/test:hello-world
