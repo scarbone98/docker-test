@@ -35,4 +35,4 @@ jobs:
           docker pull scarbone1998/test:hello-world
           docker stop hello-world || true
           docker rm hello-world || true
-          docker run -d --name hello-world -p 4000:80 --restart=always scarbone1998/test:hello-world
+          docker run -d --name hello-world -p 4000:4000 --restart=always scarbone1998/test:hello-world
